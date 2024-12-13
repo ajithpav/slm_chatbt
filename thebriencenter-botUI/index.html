@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Brien Center</title>
+    <!-- Font Awesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.min.css"> <!-- Link to external CSS file -->
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>Chat History</h2>
+                <div class="icons">
+                    <i class="fas fa-plus icon" title="New Chat" onclick="startNewConversation()"></i>
+                </div>
+            </div>
+            <ul id="history-list">
+                <!-- History will be dynamically generated here -->
+            </ul>
+            <div class="sidebar-footer">
+                <!-- Brien Center:
+                www.briencenter.org -->
+            </div>
+        </div>
+        <div class="chat-container" id="chat-container">
+            <div class="chat-header" style="display: flex; align-items: center; padding: 10px; background-color: #e9f5e9;">
+                <a href="https://www.briencenter.org/" target="_blank" style="text-decoration: none; color: inherit; display: flex; align-items: center;">
+                    <img src="imgs/image.png" alt="Brien Center Logo" style="height: 40px; margin-right: 10px; border-radius: 5px;">
+                    <h3 style="font-family: Arial, sans-serif; color: #2f7d31; margin: 0; font-weight: bold; font-style: italic;">
+                        The Brien Center
+                    </h3>
+                </a>
+            </div>
+            
+            
+            <div class="chat-body" id="chatbox">
+                <a href="https://www.briencenter.org/" target="_blank" style="text-decoration: none;" >
+                    <div class="logo">B</div>
+                </a>
+                <h3>Welcome to Brien Center!</h3>
+                <div class="placeholder-boxes">
+                    <div class="placeholder-box clickable" onclick="startConversation()">
+                        <div class="icon"><i class="fas fa-comments"></i></div>
+                        <div class="text">Click to Start the Conversation</div>
+                    </div>
+                    <div class="placeholder-box">
+                        <div class="icon">🩺</div>
+                        <div class="text">Schedule a Check-Up</div>
+                    </div>
+                    <div class="placeholder-box">
+                        <div class="icon">💉</div>
+                        <div class="text">View Vaccination Records</div>
+                    </div>
+                    <div class="placeholder-box">
+                        <div class="icon">🏥</div>
+                        <div class="text">Find a Nearby Clinic</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-footer" style="display: flex !important;justify-content: center;align-items: center;">
+                <input type="text" id="chat-input" placeholder="Type here...">
+                <button id="send-btn">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script> <!-- Link to external JS file -->
+</body>
+</html>
