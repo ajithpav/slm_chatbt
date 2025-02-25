@@ -1,0 +1,39 @@
+version: "3.1"
+
+stories:
+  - story: symptom_check_yes
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: affirm_symptom_check
+      - action: utter_symptoms_yes
+      - action: action_handoff_to_human
+
+  - story: symptom_check_no
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: deny_symptom_check
+      - action: utter_ask_prescription_refill
+
+  - story: prescription_refill_yes
+    steps:
+      - intent: affirm_prescription_refill
+      - action: utter_prescription_yes
+      - action: action_handoff_to_human
+
+  - story: prescription_refill_no
+    steps:
+      - intent: deny_prescription_refill
+      - action: utter_ask_seen_last_three_years
+
+  - story: seen_last_three_years_yes
+    steps:
+      - intent: affirm_seen_last_three_years
+      - action: utter_ask_tbc_location
+
+  - story: seen_last_three_years_no
+    steps:
+      - intent: deny_seen_last_three_years
+      - action: utter_new_patient_vt
+      - action: action_handoff_to_human

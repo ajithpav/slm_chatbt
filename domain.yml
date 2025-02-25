@@ -1,0 +1,67 @@
+version: "3.1"
+
+intents:
+  - greet
+  - affirm_symptom_check
+  - deny_symptom_check
+  - affirm_prescription_refill
+  - deny_prescription_refill
+  - affirm_seen_last_three_years
+  - deny_seen_last_three_years
+  - choose_adult_family
+  - choose_community_services
+  - choose_child_adolescent
+  - fallback
+
+responses:
+  utter_fallback:
+    - text: "Sorry, I could not understand your question. Please use the above options to start the conversation."
+
+  utter_greet:
+    - text: "Are you currently experiencing any of the following symptoms: fever, chills, chest pain, or shortness of breath?"
+      buttons:
+        - title: "Yes"
+          payload: "/affirm_symptom_check"
+        - title: "No"
+          payload: "/deny_symptom_check"
+
+  utter_symptoms_yes:
+    - text: "May I please place you on hold while I check on your request? Please exit the questionnaire and contact the Nursing Supervisor within your office."
+
+  utter_ask_prescription_refill:
+    - text: "Is the patient requesting a prescription refill?"
+      buttons:
+        - title: "Yes"
+          payload: "/affirm_prescription_refill"
+        - title: "No"
+          payload: "/deny_prescription_refill"
+
+  utter_prescription_yes:
+    - text: "Due to the specialized nature of this request, allow me to send a message to one of our staff members. They will return your call to discuss this request by the end of the next business day."
+
+  utter_ask_seen_last_three_years:
+    - text: "Has the patient been seen at The Brien Center within the last three years?"
+      buttons:
+        - title: "Yes"
+          payload: "/affirm_seen_last_three_years"
+        - title: "No"
+          payload: "/deny_seen_last_three_years"
+
+  utter_ask_tbc_location:
+    - text: "Which TBC location should the patient's appointment be scheduled at?"
+      buttons:
+        - title: "Adult & Family"
+          payload: "/choose_adult_family"
+        - title: "Child & Adolescent"
+          payload: "/choose_child_adolescent"
+        - title: "Community Services"
+          payload: "/choose_community_services"
+
+  utter_connecting_to_agent:
+    - text: "Connecting you to a live agent now..."
+
+  utter_new_patient_vt:
+    - text: "You are a new patient. I will connect you with a live human chat agent now."
+
+actions:
+  - action_handoff_to_human  # Custom action to handle live agent handoff

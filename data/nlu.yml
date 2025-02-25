@@ -1,0 +1,69 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - hello
+      - hi
+      - hey
+      - good morning
+      - good evening
+      - hi there
+      - hello there
+
+  - intent: affirm_symptom_check
+    examples: |
+      - yes
+      - yeah
+      - yup
+      - sure
+
+  - intent: deny_symptom_check
+    examples: |
+      - no
+      - nope
+      - not at all
+
+  - intent: affirm_prescription_refill
+    examples: |
+      - yes
+      - yeah
+      - yup
+      - sure
+
+  - intent: deny_prescription_refill
+    examples: |
+      - no
+      - nope
+      - not at all
+
+  - intent: affirm_seen_last_three_years
+    examples: |
+      - yes
+      - yeah
+      - yup
+      - sure
+
+  - intent: deny_seen_last_three_years
+    examples: |
+      - no
+      - nope
+      - not at all
+
+  - intent: choose_adult_family
+    examples: |
+      - Adult & Family
+      - adult and family
+      - adult family
+
+  - intent: choose_community_services
+    examples: |
+      - Community Services
+      - community services
+
+  - intent: choose_child_adolescent
+    examples: |
+      - Child & Adolescent
+      - child and adolescent
+      - child adolescent
+

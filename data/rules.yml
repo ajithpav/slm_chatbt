@@ -1,0 +1,30 @@
+version: "3.1"
+
+rules:
+  - rule: Start conversation with a greet
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - rule: Handle fallback
+    steps:
+      - intent: nlu_fallback
+      - action: utter_fallback
+
+  - rule: Connecting to agent when choosing "Adult & Family"
+    steps:
+      - intent: choose_adult_family
+      - action: utter_connecting_to_agent
+      - action: action_handoff_to_human
+
+  - rule: Connecting to agent when choosing "Child & Adolescent"
+    steps:
+      - intent: choose_child_adolescent
+      - action: utter_connecting_to_agent
+      - action: action_handoff_to_human
+
+  - rule: Connecting to agent when choosing "Community Services"
+    steps:
+      - intent: choose_community_services
+      - action: utter_connecting_to_agent
+      - action: action_handoff_to_human
